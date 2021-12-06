@@ -6,24 +6,19 @@ int main()
 {
 	setlocale(0, "");
 
-	double y;
-	Function* ptr = new Ellipse;
+	Function* func = nullptr;
 
-	std::cout << "¬ведите x,a,b дл€ эллипса\n";
-	std::cin >> (*dynamic_cast<Ellipse*>(ptr));//пон€ть почему не работает std::cin>>*ptr; ведь по идее это уже переменна€ тема Ellipse*
-	if (ptr)
-		std::cout << ptr->toString() << "\n";
+	func = new Ellipse(1, 3, 2);//x,a,b
+	std::cout << "Ёллипс:\n";
+	std::cout << func->toString() << "\n";
+	delete func;
 
-	delete ptr;
-	ptr = new Hyperbola;
+	func = new Hyperbola(2,1,3);//x,a,b
+	std::cout << "√ипербола:\n";
+	std::cout << func->toString() << "\n";
 
-	std::cout << "¬ведите x,a,b дл€ гиперболы\n";
-	std::cin >> (*dynamic_cast<Hyperbola*>(ptr));
-	if (ptr)
-		std::cout << ptr->toString() << "\n";
-
-	delete ptr;
-	ptr = nullptr;
+	delete func;
+	func = nullptr;
 
 	return 0;
 }

@@ -22,13 +22,6 @@ double Function::getX()
 	return x;
 }
 
-double Function::getY()
-{
-	if (y == 0)
-		f();
-	return y;
-}
-
 double Function::getA()
 {
 	return a;

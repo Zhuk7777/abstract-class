@@ -11,7 +11,7 @@ public:
 	Function(double _x, double _a, double _b);
 
 	double getX();
-	double getY();
+	virtual double getY() = 0;
 	double getA();
 	double getB();
 	virtual std::string toString() = 0;

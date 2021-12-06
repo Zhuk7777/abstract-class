@@ -22,6 +22,8 @@ int main()
 	if (ptr)
 		std::cout << ptr->toString() << "\n";
 
-	
+	delete ptr;
+	ptr = nullptr;
+
 	return 0;
 }

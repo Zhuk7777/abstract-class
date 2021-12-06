@@ -8,6 +8,7 @@ public:
 	Hyperbola(double _x = 0, double _a = 1, double _b = 1);
 
 	std::string toString();
+	double getY();
 
 	double  f();
 

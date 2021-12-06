@@ -6,7 +6,10 @@ Hyperbola::Hyperbola(double _x, double _a, double _b) :Function(_x, _a, _b)
 
 double Hyperbola::f()
 {
-	y = y = sqrt((pow(x, 2) / pow(a, 2) - 1) * pow(b, 2));
+	if (pow(x, 2) / pow(a, 2) - 1 < 0)
+		y = 0;
+	else
+		y = y = sqrt((pow(x, 2) / pow(a, 2) - 1) * pow(b, 2));
 	return y;
 }
 
@@ -45,4 +48,14 @@ std::string Hyperbola::toString()
 			return "y=" + std::to_string(y);
 		else
 			return "y=" + std::to_string(y) + " или y=-" + std::to_string(y);
+}
+
+double Hyperbola::getY()
+{
+	if (y == 0)
+		f();
+	if (pow(x, 2) / pow(a, 2) - 1 < 0)
+		return y = 0;
+	else
+		return y;
 }

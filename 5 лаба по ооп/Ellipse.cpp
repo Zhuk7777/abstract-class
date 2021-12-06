@@ -6,7 +6,11 @@ Ellipse::Ellipse(double _x, double _a, double _b):Function(_x,_a,_b)
 
 double Ellipse::f()
 {
-	y = sqrt((1 - pow(x, 2) / pow(a, 2)) * pow(b, 2));
+	if (1 - pow(x, 2) / pow(a, 2) < 0)
+		y = 0;
+	else
+
+		y = sqrt((1 - pow(x, 2) / pow(a, 2)) * pow(b, 2));
 	return y;
 }
 
@@ -45,4 +49,13 @@ std::string Ellipse::toString()
 			return "y=" + std::to_string(y);
 		else
 			return "y=" + std::to_string(y) + " или y=-" + std::to_string(y);
+}
+double Ellipse ::getY()
+{
+	if (y == 0)
+		f();
+	if (1 - pow(x, 2) / pow(a, 2) < 0)
+		return y = 0;
+	else
+		return y;
 }
